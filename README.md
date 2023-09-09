@@ -1,0 +1,2 @@
+# KingsHotel
+A simple website
