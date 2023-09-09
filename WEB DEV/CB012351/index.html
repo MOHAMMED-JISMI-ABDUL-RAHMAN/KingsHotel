@@ -20,7 +20,7 @@
 
                     <div class="grow-0">
                         <a href="/" title="King's Hotel" class="flex-none">
-                            <img src="/CB012351/images/hotel-logo.png" class="w-32" alt="King's Hotel" width="100" height="50"/>
+                            <img src="/WEB DEV/CB012351/images/hotel-logo.png" class="w-32" alt="King's Hotel" width="100" height="50"/>
                         </a>
                     </div>
                     <div class="grow">
@@ -144,7 +144,7 @@
                         </p>
                     </div>
                     <div class="content-image flex justify-center" style="height: 250px; width: 950px;">
-                        <img src="/CB012351/images/Ammenities.jpg" alt="Ammenities" class="object-cover"/>
+                        <img src="/WEB DEV/CB012351/images/Ammenities.jpg" alt="Ammenities" class="object-cover"/>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                         </p>
                     </div>
                     <div class="content-image flex justify-center" style="height: 250px; width: 1000px;">
-                        <img src="/CB012351/images/Meeting-room.jpg" alt="Meeting Room" class="object-cover"/>
+                        <img src="/WEB DEV/CB012351/images/Meeting-room.jpg" alt="Meeting Room" class="object-cover"/>
                     </div>
                 </div>
             </div>
@@ -229,6 +229,17 @@
             </div>
           </div>
         </div>
+        <div x-data="{ showBanner: true }" x-show="showBanner" class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg">
+            <div class="container mx-auto flex items-center justify-between">
+              <div class="w-2/3">
+                <p class="text-sm text-gray-600">We use cookies on this site to improve your user experience. By continuing to use this site, you agree to our use of cookies. For more information about how we use cookies and how you can change cookies settings, please see our <a href="/en/corporate/policies-pledges/#cookies" target="_blank" rel="noopener" class="text-blue-500">Cookies Policy</a>.</p>
+              </div>
+              <div class="w-1/3 text-right">
+                <button @click="showBanner = false" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-400">Accept</button>
+              </div>
+            </div>
+          </div>
+          
     </div>
 
 </body>
