@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King's Hotel</title>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" x-data="{ open: false, selectedRoom: null }" class="relative">
+        <header class="fixed top-0 left-0 bg-white drop-shadow-md h-[70px] w-full">
+            <div class="container mx-auto">
+                <div class="flex items-center">
+
+                    <div class="grow-0">
+                        <a href="/" title="King's Hotel" class="flex-none">
+                            <img src="/CB012351/images/hotel-logo.png" class="w-32" alt="King's Hotel" width="100" height="50"/>
+                        </a>
+                    </div>
+                    <div class="grow">
+                        <nav class="flex space-x-4">
+                            <a href="/" class="active">Home</a>
+                            <a href="/about" class="active">About Us</a>
+                            <a href="#address-section">Contact Us</a>
+                            <a href="branches.html">Branches</a>
+                        </nav>
+                    </div>
+                    <div class="grow-0 w-32">
+                        <button x-on:click="bookingSlider = !bookingSlider" class="bg-blue-400 text-white rounded p-5">
+                            Book Now
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>      
+        </header>
+        <main class="container mx-auto mt-[60px] overflow-hidden">
+            <main class="container mx-auto py-8">
+                <div class="flex justify-center">
+                    <div class="w-1/2 pr-8">
+                        <h2 class="text-2xl font-semibold">Join us</h2>
+                        <p class="mt-4">
+                            for an unforgettable adventure filled with hiking, camping, and exploring the beauty of nature. Don't miss out on this incredible experience!
+                        </p>
+                        <button x-data="{ isOpen: false }" @click="isOpen = !isOpen" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register Now</button>
+                        <div x-show="showReservation" class="mt-4">
+                            <h2 class="text-xl font-semibold mb-2">Adventure Registration</h2>
+                            <form>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your Full Name" class="w-full p-2 border border-gray-300 rounded">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="Your Email Address" class="w-full p-2 border border-gray-300 rounded">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" class="w-full p-2 border border-gray-300 rounded">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="emergencyContact">Emergency Contact</label>
+                                    <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Emergency Contact Name" class="w-full p-2 border border-gray-300 rounded">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="adventureChoice">Adventure Choice</label>
+                                    <select id="adventureChoice" name="adventureChoice" class="w-full p-2 border border-gray-300 rounded">
+                                        <option value="hiking">Hiking</option>
+                                        <option value="rafting">Rafting</option>
+                                        <option value="rockClimbing">Rock Climbing</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="w-1/2">
+                        <img src="/CB012351/images/adventure.avif" alt="Adventure Event" class="w-full h-auto rounded-lg shadow">
+                    </div>
+                </div>
+            </main>
+        </main>
+        <div id="wab_cont" class="wab-cont ui-draggable wab-side-rectangle wab-pull-right ui-draggable-handle">
+            <a href="https://wa.me/6281371037849"><span>Reservation | WhatsApp</span></a>
+        </div>
+        <footer class="bg-gray-900 text-white text-center py-5">
+            <p class="mb-4 text-sm">Contact us at: reservation@kingshotelbatam.com</p>
+            <p class="text-sm">© 2023 King’s Hotel. All rights reserved</p>
+        </footer>
+        <div  @keydown.window.escape="bookingSlider = false" x-show="bookingSlider" class="relative z-10" aria-labelledby="slide-over-title" x-ref="dialog" aria-modal="true">
+      
+            <div x-show="bookingSlider" x-transition:enter="ease-in-out duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background backdrop, show/hide based on slide-over state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          
+    
+          <div class="fixed inset-0 overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                
+                  <div x-show="bookingSlider" x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="pointer-events-auto relative w-screen max-w-md" x-description="Slide-over panel, show/hide based on slide-over state." @click.away="open = false">
+                    
+                      <div x-show="bookingSlider" x-transition:enter="ease-in-out duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Close button, show/hide based on slide-over state." class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                        <button type="button" class="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" @click="bookingSlider = false">
+                          <span class="absolute -inset-2.5"></span>
+                          <span class="sr-only">Close panel</span>
+                          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+                        </button>
+                      </div>
+                    
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                      <div class="px-4 sm:px-6">
+                        <h2 class="text-base font-semibold leading-6 text-gray-900" id="slide-over-title"><b>MENU</b></h2>
+                      </div>
+                      <div class="relative mt-6 flex-1 px-4 sm:px-6">
+                            <p><a href="booking.html">Book Now !</a></p><br><hr>
+                            <p><a href="restuarant.html">Restuarant</a></p><br><hr>
+                            <p><a href="adventure.html">Adventure</a></p><br><hr>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King's Hotel - Branches</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="app" x-data="{ open: false }" class="relative">
+
+        <header class="fixed top-0 left-0 bg-white drop-shadow-md h-[70px] w-full">
+            <div class="container mx-auto">
+                <div class="flex items-center">
+
+                    <div class="grow-0">
+                        <a href="/" title="King's Hotel" class="flex-none">
+                            <img src="/CB012351/images/hotel-logo.png" class="w-32" alt="King's Hotel" width="100" height="50"/>
+                        </a>
+                    </div>
+                    <div class="grow">
+                        <nav class="flex space-x-4">
+                            <a href="/" class="active">Home</a>
+                            <a href="/about" class="active">About Us</a>
+                            <a href="#address-section">Contact Us</a>
+                            <a href="branches.html">Branches</a>
+                        </nav>
+                    </div>
+                    <div class="grow-0 w-32">
+                        <button x-on:click="bookingSlider = !bookingSlider" class="bg-blue-400 text-white rounded p-5">
+                            Book Now
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>      
+        </header>
+
+      
+        <main class="container mx-auto mt-[60px] overflow-hidden">
+            <h1 class="text-4xl font-semibold text-center mb-8">Our Hotel Branches</h1>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    @click="isOpen = !isOpen">
+                    <h2 class="text-2xl font-semibold mb-4">King’s Hotel Colombo</h2>
+                    <div x-show="isOpen" class="transition-opacity duration-300 opacity-100">
+                        <p class="mb-2">23 A. G. Hinniappuhamy Mawatha, 01300 Colombo, Sri Lanka</p>
+                        <p><a href="https://wa.me/6281371037849">Phone: +62 813 7103 7849</a></p>
+                        <div class="grid grid-cols-3 gap-5" class="mt-8">
+                            <div class="col-span-1">
+                                <img src="/CB012351/images/Slide1.webp" alt="Colombo 1" class="rounded-lg w-32 h-32">
+                            </div>
+                            <div class="col-span-1">
+                                <img src="/CB012351/images/Slide3.webp" alt="Colombo 2" class="rounded-lg w-32 h-32">
+                            </div>
+                            <div class="col-span-1">
+                                <img src="/CB012351/images/Slide4.webp" alt="Colombo 3" class="rounded-lg w-32 h-32">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    @click="isOpen = !isOpen">
+                    <h2 class="text-2xl font-semibold mb-4">King’s Hotel Batam</h2>
+                    <div x-show="isOpen" class="transition-opacity duration-300 opacity-100">
+                        <p class="mb-2">King’s Hotel Batam Jl. Yos Sudarso, Seraya Atas, Batam Kepulauan Riau 29444 – Indonesi</p>
+                        <p><a href="https://wa.me/6281371037849">Phone: +62 813 7103 7849</a></p>
+                        <div class="grid grid-cols-3 gap-5" class="mt-8">
+                            <div class="col-span-1">
+                                <img src="/CB012351/images/Deluxe-room.jpg" alt="Colombo 1" class="rounded-lg w-32 h-32">
+                            </div>
+                            <div class="col-span-1">
+                                <img src="/CB012351/images/Grand-DeLuxe-Room.jpg" alt="Colombo 2" class="rounded-lg w-32 h-32">
+                            </div>
+                            <div class="col-span-1">
+                                <img src="/CB012351/images/Junior-suite.jpg" alt="Colombo 3" class="rounded-lg w-32 h-32">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="wab_cont" class="wab-cont ui-draggable wab-side-rectangle wab-pull-right ui-draggable-handle">
+            <a href="https://wa.me/6281371037849"><span>Reservation | WhatsApp</span></a>
+        </div>
+        <div id="wab_cont" class="wab-cont ui-draggable wab-side-rectangle wab-pull-right ui-draggable-handle">
+            <a href="https://wa.me/6281371037849"><span>Reservation | WhatsApp</span></a>
+        </div>
+        <footer class="bg-gray-900 text-white text-center py-5">
+            <p class="mb-4 text-sm">Contact us at: reservation@kingshotelbatam.com</p>
+            <p class="text-sm">© 2023 King’s Hotel. All rights reserved</p>
+        </footer>
+        <div  @keydown.window.escape="bookingSlider = false" x-show="bookingSlider" class="relative z-10" aria-labelledby="slide-over-title" x-ref="dialog" aria-modal="true">
+      
+            <div x-show="bookingSlider" x-transition:enter="ease-in-out duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background backdrop, show/hide based on slide-over state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          
+    
+          <div class="fixed inset-0 overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                
+                  <div x-show="bookingSlider" x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="pointer-events-auto relative w-screen max-w-md" x-description="Slide-over panel, show/hide based on slide-over state." @click.away="open = false">
+                    
+                      <div x-show="bookingSlider" x-transition:enter="ease-in-out duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Close button, show/hide based on slide-over state." class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                        <button type="button" class="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" @click="bookingSlider = false">
+                          <span class="absolute -inset-2.5"></span>
+                          <span class="sr-only">Close panel</span>
+                          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+                        </button>
+                      </div>
+                    
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                      <div class="px-4 sm:px-6">
+                        <h2 class="text-base font-semibold leading-6 text-gray-900" id="slide-over-title"><b>MENU</b></h2>
+                      </div>
+                      <div class="relative mt-6 flex-1 px-4 sm:px-6">
+                            <p><a href="booking.html">Book Now !</a></p><br><hr>
+                            <p><a href="restuarant.html">Restuarant</a></p><br><hr>
+                            <p><a href="adventure.html">Adventure</a></p><br><hr>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    </body>
+</html>
