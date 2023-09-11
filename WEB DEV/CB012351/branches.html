@@ -12,7 +12,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="bg-gray-100 font-sans">
-    <div id="app" x-data="{ open: false }" class="relative">
+    <div id="app" x-data="{ open: false, bookingSlider: false }" class="relative">
 
         <header class="fixed top-0 left-0 bg-white drop-shadow-md h-[70px] w-full">
             <div class="container mx-auto">
@@ -71,7 +71,7 @@
                     @click="isOpen = !isOpen">
                     <h2 class="text-2xl font-semibold mb-4">King’s Hotel Batam</h2>
                     <div x-show="isOpen" class="transition-opacity duration-300 opacity-100">
-                        <p class="mb-2">King’s Hotel Batam Jl. Yos Sudarso, Seraya Atas, Batam Kepulauan Riau 29444 – Indonesi</p>
+                        <p class="mb-2">King’s Hotel Batam Jl. Yos Sudarso, Seraya Atas, Batam Kepulauan Riau 29444 – Indonesia</p>
                         <p><a href="https://wa.me/6281371037849">Phone: +62 813 7103 7849</a></p>
                         <div class="grid grid-cols-3 gap-5" class="mt-8">
                             <div class="col-span-1">

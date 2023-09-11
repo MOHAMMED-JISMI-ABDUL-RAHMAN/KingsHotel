@@ -12,6 +12,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="bg-gray-100">
+    <div id="app" x-data="{ open: false, bookingSlider: false }" class="relative">
     <header class="fixed top-0 left-0 bg-white drop-shadow-md h-[70px] w-full">
         <div class="container mx-auto">
             <div class="flex items-center">
@@ -38,7 +39,6 @@
             </div>
         </div>      
     </header>
-
 <main class="container mx-auto mt-[60px] overflow-hidden">
 <div class="container mx-auto my-4 p-4">
     <div class="bg-white p-4 shadow-md">
@@ -116,6 +116,17 @@
         </div>
       </div>
     </div>
+    <div x-data="{ showBanner: true }" x-show="showBanner" class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg">
+        <div class="container mx-auto flex items-center justify-between">
+          <div class="w-2/3">
+            <p class="text-sm text-gray-600">We use cookies on this site to improve your user experience. By continuing to use this site, you agree to our use of cookies. For more information about how we use cookies and how you can change cookies settings, please see our <a href="/en/corporate/policies-pledges/#cookies" target="_blank" rel="noopener" class="text-blue-500">Cookies Policy</a>.</p>
+          </div>
+          <div class="w-1/3 text-right">
+            <button @click="showBanner = false" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-400">Accept</button>
+          </div>
+        </div>
+      </div>
+</div>
 </div>
 </body>
 </html>
