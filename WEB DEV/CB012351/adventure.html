@@ -47,39 +47,42 @@
                         <p class="mt-4">
                            Join us for an unforgettable adventure filled with hiking, camping, and exploring the beauty of nature. Don't miss out on this incredible experience!
                         </p>
-                        <button x-data="{ isOpen: false }" @click="isOpen = !isOpen" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register Now</button>
-                        <div x-show="showReservation" class="mt-4">
-                            <h2 class="text-xl font-semibold mb-2">Adventure Registration</h2>
-                            <form>
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Your Full Name" class="w-full p-2 border border-gray-300 rounded">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="Your Email Address" class="w-full p-2 border border-gray-300 rounded">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" class="w-full p-2 border border-gray-300 rounded">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="emergencyContact">Emergency Contact</label>
-                                    <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Emergency Contact Name" class="w-full p-2 border border-gray-300 rounded">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-sm font-semibold mb-2" for="adventureChoice">Adventure Choice</label>
-                                    <select id="adventureChoice" name="adventureChoice" class="w-full p-2 border border-gray-300 rounded">
-                                        <option value="hiking">Hiking</option>
-                                        <option value="rafting">Rafting</option>
-                                        <option value="rockClimbing">Rock Climbing</option>
-                                    </select>
-                                </div>
-                                <div class="mb-4">
-                                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Register</button>
-                                </div>
-                            </form>
+                        <div x-data="{ isOpen: false }">
+                            <button  @click="isOpen = !isOpen" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register Now</button>
+                            <div x-show="isOpen" class="mt-4">
+                                <h2 class="text-xl font-semibold mb-2">Adventure Registration</h2>
+                                <form>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600 text-sm font-semibold mb-2" for="name">Full Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Your Full Name" class="w-full p-2 border border-gray-300 rounded">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600 text-sm font-semibold mb-2" for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" placeholder="Your Email Address" class="w-full p-2 border border-gray-300 rounded">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600 text-sm font-semibold mb-2" for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" class="w-full p-2 border border-gray-300 rounded">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600 text-sm font-semibold mb-2" for="emergencyContact">Emergency Contact</label>
+                                        <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Emergency Contact Name" class="w-full p-2 border border-gray-300 rounded">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600 text-sm font-semibold mb-2" for="adventureChoice">Adventure Choice</label>
+                                        <select id="adventureChoice" name="adventureChoice" class="w-full p-2 border border-gray-300 rounded">
+                                            <option value="hiking">Hiking</option>
+                                            <option value="rafting">Rafting</option>
+                                            <option value="rockClimbing">Rock Climbing</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Register</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        
                         
                     </div>
                     <div class="w-1/2">
